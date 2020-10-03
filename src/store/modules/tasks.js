@@ -89,15 +89,12 @@ export default {
 		},
 		TOGGLE_STATUS_TASK: async ({commit}, payload) => {
 			commit('clearError')
-			commit('setLoading', true)
 			
 			try {
 				await db.collection('tasks').doc(payload.id).update({status: !payload.status})
 				commit('TOGGLE_STATUS_TASK', payload.id)
-				commit('setLoading', false)
 			} catch (error) {
 				commit('setError', error.message)
-				commit('setLoading', false)
 				throw error
 			}
 			

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!loading">
         <ul class="todo-list">
             <router-link
                     tag="li"

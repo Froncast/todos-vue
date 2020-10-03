@@ -1,5 +1,5 @@
 <template>
-    <div class="pagination">
+    <div class="pagination" v-if="total > 0">
         <div class="pagination__left">
             <router-link
                     tag="div"
